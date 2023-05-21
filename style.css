@@ -973,8 +973,8 @@ footer .copyright {
     flex-direction: column;
   }
   #about-head img {
-    width: 100;
-    max-width: 470px;
+    width: 100%;
+    /* max-width: 470px; */
     margin-bottom: 20px;
 }
 
