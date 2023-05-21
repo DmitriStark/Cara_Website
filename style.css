@@ -973,7 +973,8 @@ footer .copyright {
     flex-direction: column;
   }
   #about-head img {
-    width: 430px;
+    width: 100;
+    max-width: 470px;
     margin-bottom: 20px;
 }
 
@@ -982,6 +983,7 @@ footer .copyright {
 }
 
 #about-app .video {
-  width: 430px;
+  width: 100%;
+  max-width: 470px;
 }
 }
