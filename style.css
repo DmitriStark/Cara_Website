@@ -843,6 +843,10 @@ footer .copyright {
   margin-right: 0px;
 }
 
+#prodetails .small-img-group {
+  width: 50%;
+}
+
 #prodetails .single-pro-details {
   width: 100%;
 }
