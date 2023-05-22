@@ -793,25 +793,25 @@ footer .copyright {
   font-size: 14px;
 }
 
-#contact-details .map{
+#contact-details .map {
   width: 55%;
   height: 400px;
 }
 
-#contact-details .map iframe{
+#contact-details .map iframe {
   width: 100%;
   height: 100%;
 }
 
-#form-details{
-display: flex;
-justify-content: space-between;
-margin: 30px;
-padding: 80px;
-border: 1px solid #e1e1e1;
-} 
+#form-details {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+  padding: 80px;
+  border: 1px solid #e1e1e1;
+}
 
-#form-details form{
+#form-details form {
   width: 65%;
   display: flex;
   flex-direction: column;
@@ -819,7 +819,7 @@ border: 1px solid #e1e1e1;
 }
 
 #form-details form input,
-#form-details form textarea{
+#form-details form textarea {
   width: 100%;
   padding: 12px 15px;
   outline: none;
@@ -827,39 +827,137 @@ border: 1px solid #e1e1e1;
   border: 1px solid #e1e1e1;
 }
 
-#form-details form button{
+#form-details form button {
   background-color: #088178;
   color: #fff;
 }
 
-#form-details .people div{
+#form-details .people div {
   padding-bottom: 25px;
   display: flex;
   align-items: flex-start;
-
 }
 
-#form-details .people div img{
+#form-details .people div img {
   width: 65px;
   height: 65px;
   object-fit: cover;
   margin-right: 15px;
 }
 
-#form-details .people div p{
+#form-details .people div p {
   margin: 0;
   font-size: 13px;
   line-height: 25px;
-
 }
 
-#form-details .people div p span{
+#form-details .people div p span {
   display: block;
   font-size: 16px;
   font-weight: 600;
   color: #000;
 }
 
+/* ////////////////////////////////cart page////////////////////////////// */
+#cart {
+  overflow-x: auto;
+}
+
+#cart table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  white-space: nowrap;
+}
+
+#cart table img {
+  width: 70px;
+}
+
+#cart table td:nth-child(1) {
+  width: 100px;
+  text-align: center;
+}
+#cart table td:nth-child(2) {
+  width: 150px;
+  text-align: center;
+}
+#cart table td:nth-child(3) {
+  width: 250px;
+  text-align: center;
+}
+#cart table td:nth-child(4),
+#cart table td:nth-child(5),
+#cart table td:nth-child(6) {
+  width: 150px;
+  text-align: center;
+}
+
+#cart table td:nth-child(5) input {
+  width: 70px;
+  padding: 10px 5px 10px 15px;
+}
+
+#cart table thead {
+  border: 1px solid #e2e9e1;
+  border-left: none;
+  border-right: none;
+}
+
+#cart table tbody td {
+  font-size: 13px;
+}
+
+#cart-add {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#coupon {
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+#coupon h3,
+#subtotal h3 {
+  padding-bottom: 15px;
+}
+
+#coupon input {
+  padding: 10px 20px;
+  outline: none;
+  width: 60%;
+  margin-right: 10px;
+  border: 1px solid #e2e9e1;
+}
+
+#coupon button,
+#subtotal button {
+  background-color: #088178;
+  color: #fff;
+  padding: 12px 20px;
+}
+
+#subtotal {
+  width: 50%;
+  margin-bottom: 30px;
+  border: 1px solid #e2e9e1;
+  padding: 30px;
+}
+
+#subtotal table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#subtotal table td {
+  width: 50%;
+  border: 1px solid #e2e9e1;
+  padding: 10px;
+  font-size: 13px;
+}
 
 /* /////// media querry ipads////////////// */
 
@@ -967,17 +1065,13 @@ border: 1px solid #e1e1e1;
                 contact style
   */
   #form-details {
-    
     padding: 40px;
-    
-}
+  }
 
-#form-details form {
-  width: 50%;
+  #form-details form {
+    width: 50%;
+  }
 }
-
-}
-
 
 /* //////////////////////////////////////////////////////////// */
 /*      mobile */
@@ -1120,26 +1214,41 @@ border: 1px solid #e1e1e1;
 
   #contact-details {
     flex-direction: column;
+  }
+
+  #contact-details .details {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  #contact-details .map {
+    width: 100%;
+  }
+
+  #form-details {
+    margin: 10px;
+    padding: 30px 10px;
+    flex-wrap: wrap;
+  }
+  #form-details form {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  /* ///////////////////////////////////////////////////////////////////////////////////////////////////////
+cart-page */
+
+#cart-add {
+
+  flex-direction: column;
 }
 
-#contact-details .details {
+#coupon {
   width: 100%;
-  margin-bottom: 30px;
 }
 
-#contact-details .map {
+#subtotal {
   width: 100%;
+  padding: 20px;
+ 
 }
-
-#form-details {
-  margin: 10px;
-  padding: 30px 10px;
-  flex-wrap: wrap;
-
-}
-#form-details form {
-  width: 100%;
-  margin-bottom: 30px;
-}
-
 }
