@@ -13,17 +13,29 @@
 
         <div>
             <ul id="navbar">
-                <li><a class="active" href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="obout.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a  href="shop.html">Shop</a></li>
+                <li><a  href="blog.html">Blog</a></li>
+                <li><a  href="obout.html">About</a></li>
+                <li><a  href="contact.html">Contact</a></li>
+                <li id="lg-bag"><a class="active"><i class="fa-solid fa-cart-shopping"></i></a><span class="quantity">0</span></li>
                 <a id="close" href="#"><i class="fa-solid fa-xmark"></i></a>
             </ul>
         </div>
+
+        
+        <div class="card">
+            <h1>Card</h1>
+            <ul class="listCard"></ul>
+            <div class="checkout">
+                <div class="total">0</div>
+                <div class="closeShopping">Close</div>
+            </div>
+        </div>
+
+
         <div id="mobile">
-            <a href="cart.html"><i class="fa-solid fa-cart-shopping mobicons"></i></a>
+            <a id="but"><i class="fa-solid fa-cart-shopping mobicons"></i><span class="quantity">0</span></a>
             <div id="bar">
                 <i class="fas fa-outdent mobicons"></i>
             </div>
@@ -223,9 +235,11 @@
     <section id="product1" class="section-p1">
         <h2>New Arrivals</h2>
         <p>Summer Collection New Modern Design</p>
+
+
         <div class="pro-container">
-            <div class="pro" onclick="window.location.href = 'sproduct.html'">
-                <img src="img/products/n1.jpg" alt="">
+            <div class="pro" >
+                <img src="img/products/n1.jpg" onclick="window.location.href = 'sproduct.html'" alt="">
                 <div class="des">
                     <span>adidas</span>
                     <h5>Cartoon Asutronaft T-shirts</h5>
@@ -477,6 +491,6 @@
 
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="main.js"></script>
+    <script src="main.js" async></script>
 </body>
 </html>
