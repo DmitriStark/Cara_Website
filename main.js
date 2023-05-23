@@ -31,25 +31,25 @@ for (let i = 0; i < removeCartItemButtons.length; i++) {
     })
 }
 
-// function updateCartTotal(){
-//     let cartItemContainer =document.getElementsByClassName("cart-items")[0]
-//     let cartrows = cartItemContainer.getElementsByClassName('cart-row')
+function updateCartTotal(){
+    let cartItemContainer =document.getElementsByClassName("cart-items")[0]
+    let cartrows = cartItemContainer.getElementsByClassName('cart-row')
 
-//     for(let i =0;i < cartrows.length ; i++){
-//         let cartrow = cartrow[i]
-//         let priceElement =cartrow.getElementsByClassName('cart-price')[0]
-//         let quantityElement = cartrow.getElementsByClassName('cart-quantity-input')[0]
-//         console.log(priceElement,quantityElement)
+    for(let i =0;i < cartrows.length ; i++){
+        let cartrow = cartrow[i]
+        let priceElement =cartrow.getElementsByClassName('cart-price')[0]
+        let quantityElement = cartrow.getElementsByClassName('cart-quantity-input')[0]
+        console.log(priceElement,quantityElement)
 
-//     }
+    }
 
-// }
+}
 
-// console.log(removeCartItemButtons)
-// const listed = []                            
+console.log(removeCartItemButtons)
+const listed = []                            
 
 
-/////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 // new try shoping cart
 
 let mobileshop = document.querySelector('#but')
@@ -58,19 +58,20 @@ let closeShopping = document.querySelector(".closeShopping")
 let listCard = document.querySelector('.listCard')
 let body = document.querySelector('body')
 let total = document.querySelector('.total')
-let quantity = document.querySelector('.quantity')
+let quantity = document.querySelectorAll('.quantity')
 let list = document.querySelector('.list')
+let card = document.querySelector(".card")
 
 
 mobileshop.addEventListener('click',()=>{
-    body.classList.add("active")
+    card.classList.add("active")
 })
 
 openShopping.addEventListener('click', () => {
-    body.classList.add("active")
+    card.classList.add("active")
 })
 closeShopping.addEventListener('click', () => {
-    body.classList.remove('active')
+    card.classList.remove('active')
 })
 
 let products = [
@@ -160,53 +161,49 @@ function initApp() {
 }
 initApp()
 
-function addToCard(key) {
-    if (listCards[key] == null) {
-        listCards[key] = products[key]
-        listCards[key].quantity = 1
+function addToCard(key){
+    if(listCards[key] == null){
+        // copy product form list to list card
+        listCards[key] = JSON.parse(JSON.stringify(products[key]));
+        listCards[key].quantity = 1;
     }
-    reloadCard()
-
+    reloadCard();
 }
 
 function reloadCard(){
-    listCard.innerHTML ="";
-    let count =0
-    let totalPrice =0
-    listCards.forEach((value,key)=>{
-        totalPrice = totalPrice +value.price;
-        count = count + value.quantity
-
+    listCard.innerHTML = '';
+    let count = 0;
+    let totalPrice = 0;
+    listCards.forEach((value, key)=>{
+        totalPrice = totalPrice + value.price;
+        count = count + value.quantity;
         if(value != null){
-            let newDiv = document.createElement("li")
-            newDiv.innerHTML =`
-            <div><img src = "${value.image}"</div>
-            <div>${value.name}</div>
-            <div>${value.price.toLocaleString()}</div>
-            <div>${value.quantity}</div>
-            <div>
-            <button onclick="changeQuantity(${key},${value.quantity -1})">-</button>
-            <div class="count">${value.quantity}</div>
-            <button onclick="changeQuantity(${key},${value.quantity +1})">+</button>
-            </div>
-            `;
-            listCard.appendChild(newDiv)
+            let newDiv = document.createElement('li');
+            newDiv.innerHTML = `
+                <div><img src="${value.image}"/></div>
+                <div>${value.name}</div>
+                <div>${value.price.toLocaleString()}</div>
+                <div>
+                    <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
+                    <div class="count">${value.quantity}</div>
+                    <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
+                </div>`;
+                listCard.appendChild(newDiv);
         }
     })
-
-    total.innerText =totalPrice.toLocaleString();
-    quantity.innerText = count
+    total.innerText = totalPrice.toLocaleString();
+    quantity.innerText = count;
 }
 
-function changeQuantity(key,quantity){
+function changeQuantity(key, quantity){
     if(quantity == 0){
         delete listCards[key];
-
     }else{
-        listCards[key].quantity =quantity;
+        listCards[key].quantity = quantity;
         listCards[key].price = quantity * products[key].price;
-
     }
-    reloadCard()
-
+    reloadCard();
 }
+
+
+
