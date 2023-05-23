@@ -58,7 +58,7 @@ let closeShopping = document.querySelector(".closeShopping")
 let listCard = document.querySelector('.listCard')
 let body = document.querySelector('body')
 let total = document.querySelector('.total')
-let quantity = document.querySelectorAll('.quantity')
+let quantity = document.querySelector('.quantity')
 let list = document.querySelector('.list')
 let card = document.querySelector(".card")
 
