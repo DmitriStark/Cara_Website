@@ -1460,12 +1460,10 @@ card  */
   
 }
 .card.active{
-  width: 95%;
+  width: 95vw;
 
 }
-.quantity{
-  display: block;
-}
+
 }
 
 
